@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, request
-from flask_ngrok import run_with_ngrok
+#from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
-run_with_ngrok(app)  # Conecta con ngrok
+#run_with_ngrok(app)  # Conecta con ngrok
 
 # Simulación de base de datos
 productos = [
@@ -72,4 +72,4 @@ def confirmar_pedido():
     carrito.clear()
     return jsonify(pedido), 200
 
-app.run()
+app.run(host="0.0.0.0", port=3000)
